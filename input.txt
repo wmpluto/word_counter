@@ -1,0 +1,1319 @@
+﻿----------------------- Page 1-----------------------
+
+„ECU development with AUTOSAR” 
+An introduction for AUTOSAR beginners 
+
+AUTOSAR Webinar 2013-03-12 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+V0.01 2012-09-27 
+
+----------------------- Page 2-----------------------
+
+Agenda 
+
+  > General Information 
+
+     Why AUTOSAR 
+
+     Introduction to AUTOSAR 
+
+     Vector AUTOSAR Solution 
+
+     OEM Solutions 
+
+     Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  2 
+
+----------------------- Page 3-----------------------
+
+General Information 
+
+                                      Your speaker today: 
+
+                                       Christian Runge  
+
+                                   Working for the Vector Product Line Embedded  
+                                        Software as Senior Account Manager 
+
+                                    MICROSAR, CANbedded, Flashing, Real-Time  
+                                       Operating Systems and related services 
+
+                                                     Contact: 
+
+                                            Phone: +49 711 80670-3904  
+
+                                         Email: christian.runge@vector.com 
+
+----------------------- Page 4-----------------------
+
+General Information 
+
+ Duration: approx. 30 minutes 
+
+ Questions: 
+
+        >  Please use the Q&A features of Webex 
+
+        >  Question will be answered after the presentation 
+
+        >  Or send us later on your questions  
+
+ A link to the presented slides will be sent by e-mail to all  
+   registered participants after this event 
+
+----------------------- Page 5-----------------------
+
+Agenda 
+
+     General Information 
+
+  > Why AUTOSAR 
+
+     Introduction to AUTOSAR 
+
+     Vector AUTOSAR Solution 
+
+     OEM Solutions 
+
+     Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  5 
+
+----------------------- Page 6-----------------------
+
+Why AUTOSAR 
+
+The challenge: 
+
+     E/E complexity is growing fast 
+
+     Quantity of software is exploding 
+
+     Many different hardware platforms are used 
+
+     Development processes and data formats are not harmonized 
+
+The main objective of AUTOSAR: 
+
+    Improve software quality and reduce costs by re-use 
+
+        Re-use of functions across carlines and across OEM boundaries 
+
+        Re-use of basic software 
+
+        Re-use of development methods and tools 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  6 
+
+----------------------- Page 7-----------------------
+
+     Why AUTOSAR 
+
+        History Embedded Software at Vector 
+
+                                                                                                         Security 
+
+        Vector was the first independent vendor of                                                      OBD 
+
+          Basic Software                                                                            AUTOSAR 4 
+
+                                                                                                    Ethernet/IP 
+
+                                                                                               Monitor & Debug 
+
+                                                                                               Smart Charging 
+
+                                                                                               Safety 
+
+                                                                              AUTOSAR 3 
+
+                                                               MEM 
+
+                                                         FlexRay 
+
+                                                    Projects 
+
+                                         LIN 
+
+                         FBL 
+
+                    Diagnostics 
+
+         OS 
+                                                                                             2004: AUTOSAR Member 
+    CAN + NM                                                                                 2007: 1st AUTOSAR Release 
+
+1994       1996      1998       2000      2002       2004       2006      2008       2010       2012      2014 
+
+     © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+     Slide:  7 
+
+----------------------- Page 8-----------------------
+
+Why AUTOSAR 
+
+     Example CANbedded Communication Stack 
+
+        HISHIS (German: Hersteller Initiative Software) ('OEM software initiative')(German: Hersteller Initiative Software) ('OEM software initiative') 
+                 an interest group consisting of the car an interest group consisting of the car manufacturers Audi, BMW, DaimlerChryslermanufacturers Audi, BMW, DaimlerChrysler 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  8 
+
+----------------------- Page 9-----------------------
+
+Agenda 
+
+     General Information 
+
+     Why AUTOSAR 
+
+  > Introduction to AUTOSAR 
+
+     Vector AUTOSAR Solution 
+
+     OEM Solutions 
+
+     Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  9 
+
+----------------------- Page 10-----------------------
+
+Introduction to AUTOSAR 
+
+    AUTOSAR Partnership 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  10 
+
+----------------------- Page 11-----------------------
+
+Introduction to AUTOSAR 
+
+    Targets and Goals 
+
+ Standardize Development Process and  
+      exchange formats 
+      >>> Methodology + Templates 
+
+ Standardize Functionality 
+
+      >>> Functional Interfaces 
+
+ Specify a clear interface between basic  
+      software modules and application 
+
+      >>> RTE 
+                                                                                                                            Application Layer 
+
+                                                                                                                     AUTOSAR Runtime Environment (RTE) 
+
+                                                                                                          System Services   MEM      Communic      I/O      Com 
+ Define open reference architecture for                                                                                               ation     Hardware   plex 
+                                                                                                                                      Services             Drive 
+      ECU software                                                                                              SYS         MEM       CAN/LIN                rs 
+
+                                                                                                                                        /FR  
+
+      >>> Basic Software                                                                                         SYS       Memory      COM         I/O  
+                                                                                                                Drivers    Drivers     Drivers    Drivers 
+
+                                                                                                                              Microcontroller 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  11 
+
+----------------------- Page 12-----------------------
+
+ Introduction to AUTOSAR 
+
+    AUTOSAR Workflow 
+
+Complete SW functionality of the vehicle is  
+                                                                ..and distributed to ECUs 
+defined as a system of SWCs... 
+
+                                                                 ECU1              ECU2 
+            SWC1 
+
+                                                                    SWC1             SWC3 
+
+    Virtual Function Bus 
+                                                                    SWC2 
+             VFB 
+  SWC2                SWC3 
+
+Software Component Description*                                System Description* 
+
+ An extract is created for                                     The ECU is configured based  
+ each ECU...                                                   on the ECU Extract. 
+
+  ECU1 
+                                                                 SWC1         SWC2 
+
+     SWC1 
+                                                                                       RTE 
+
+     SWC2 
+                                                                   Basic Software  
+                                                                       (BSW) 
+
+                                                                                            * 
+                                                               ECU Configuration 
+ Extract of System Description*                                Description (ECUC)* 
+
+ © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+ Slide:  12 
+
+----------------------- Page 13-----------------------
+
+Introduction to AUTOSAR 
+
+   AUTOSAR Status 
+
+AUTOSAR … 
+
+… is a key enabler for high performance electronic systems 
+
+… is a broadly used standard in Europe 
+
+AUTOSAR 3.x: 
+
+ First specification: 2007 
+
+ Mature solution used for series production 2010ff 
+
+Adaptations necessary  OEM-specific extensions 
+
+AUTOSAR 4.x: 
+
+ First specification: 2009 
+
+ First mature specification: 2012 (4.0.3) 
+
+ 4.0.3 is the right version for development start in 2012 
+
+ New functions: safety, variant handling, Ethernet/IP, multicore, … 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  13 
+
+----------------------- Page 14-----------------------
+
+Agenda 
+
+     General Information 
+
+     Why AUTOSAR 
+
+     Introduction to AUTOSAR 
+
+  > Vector AUTOSAR Solution 
+
+     OEM Solutions 
+
+     Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  14 
+
+----------------------- Page 15-----------------------
+
+Vector AUTOSAR Solution 
+
+   AUTOSAR Toolset 
+                                                      SWC2 
+
+        Logical & Software                    SWC1 
+                                                                                      Calibration 
+       Architecture Design                               SWC3 
+
+           PREEvision                                                                  CANape 
+
+                                                  SWC2 
+
+                                           SWC1 
+                                                             SWC3 
+         Development of  
+      Application Software                                                       ECU-/System-Test 
+
+  Virtual Integration Platform                       S1   S2                            CANoe 
+               (VIP) 
+
+      SWC Detailed Design                    SWC1        SWC2                       SWC Unit Test 
+       (RTE Configuration) 
+                                                            RTE                         DaVinci 
+       DaVinci Developer 
+                                                                                 Component Tester 
+
+                                              Basic Software  
+                                                   (BSW) 
+        RTE Configuration                                                          ECU Monitoring  
+       BSW Configuration                       AUTOSAR ECU                         and Debugging 
+
+              DaVinci 
+         Configurator Pro                                S1   S2                     CANoe.AMD 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  15 
+
+----------------------- Page 16-----------------------
+
+ Vector AUTOSAR Solution 
+
+   AUTOSAR Workflow 
+
+Complete SW functionality of the vehicle is  
+                                                              ..and distributed to ECUs 
+defined as a system of SWCs... 
+
+                                                               ECU1             ECU2 
+            SWC1 
+                               n                                  SWC1             SWC3 
+                               o                                                               n 
+                              i                                                                o 
+                               s 
+    Virtual Function Bus      i                                                               i 
+                               v                                                               s 
+                                                                                              i 
+                              E                                   SWC2                         v 
+            VFB               E                                                               E 
+  SWC2               SWC3     R                                                               E 
+                              P                                                               R 
+                                                                                              P 
+
+Software Component Description*                              System Description* 
+
+                                                                                               o 
+                                                                                               r 
+ An extract is created for                                    The ECU is configured based      P 
+                                                                                                  
+ each ECU...                                                  on the ECU Extract.              r 
+                                                                                               o 
+                                                                                             r t 
+                               r                                                             e a 
+  ECU1                         e                               SWC1         SWC2             p r 
+                               p                                                             o u 
+                               o                                                            l  g 
+                                                                                               i 
+                               l                                                             e  f 
+     SWC1                      e                                                             v n 
+                             n  v                                                            e o 
+                             o  e                                                    RTE    D  C  
+                            i D                                                             i  i 
+                             s i                                                             c c 
+     SWC2                   i  c                                                             n n 
+                             v  n                                Basic Software             i  i 
+                            E i                                                             V  V 
+                            E V                                      (BSW)                   a a 
+                            R  a                                                            D  D 
+                            P D 
+
+                                                             ECU Configuration 
+ Extract of System Description*                              Description (ECUC)*          * 
+
+ © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+ Slide:  16 
+
+----------------------- Page 17-----------------------
+
+Vector AUTOSAR Solution 
+
+    Workflow AUTOSAR 4.x 
+
+                                   PREEvision 
+
+                                                                                                                            DaVinci Developer 
+
+                                                   Input files provided by               .xml 
+      .XML                  DBC                    OEM                                                                       Embedded Coder 
+                                   LDF 
+                                          Fibex    Contains communication          Software Component  
+     ECU Extract of                                information, needed               Description files 
+    System                                         for the ECU                                                                   TargetLink 
+
+     Description  
+     provided by  
+    OEM                                      DaVinci Configurator Pro 
+
+    Contains                                   Configuration of RTE + BSW 
+    system  
+    information,  
+     needed for the            SystemDesc  
+     ECU                        Conversion                                                                                           BSW module  
+                                                                                                                     .c      .h      configuration header  
+                                                                                                                                     and code files 
+                                   .xml                              Editing and                                                     RTE header and code  
+                               ECU Extract of                                                                                        files 
+                            System Description                       Generation                                                      SWC header files 
+
+         .cdd/                  Base ECUC  
+          .odx                  Generation 
+
+        CANdela  
+    Diagnostic Data 
+                                   .xml                                                                                   Other AUTOSAR tools 
+
+                             ECU Configuration 
+                                Description 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  17 
+
+----------------------- Page 18-----------------------
+
+Vector AUTOSAR Solution 
+
+    MICROSAR Basic Software – Architecture 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  18 
+
+----------------------- Page 19-----------------------
+
+                                                         x 
+                                                         e   s                                          
+                                                         l   r                                       C 
+                                                         p   e                                       F 
+                                                                                                     R 
+                                                             v                                          
+                                                         m  i                                        o 
+                                                             r                                       t 
+                                                         o  D                                        g  T 
+                                                         C                                           n X 
+                                                                                                     i E 
+                                                                                                     d G 
+                                                                                                     r 
+                                                                                                   R  o D 
+                                                                                                     c 
+                                                                                                   A  c W 
+                                                                                 VCRTHTE           S  a    
+                                                  BAWHOI 
+                                                                                                   O  s d 
+                                                                                                      n 
+                                                                                                   T  e  a 
+                                                                                                     l 
+                                                                              T                    U  u ,  
+                                                                                                   A d T 
+                                                                                 VCRTRF 
+                                                                              X                    r   o X 
+                                               OI RASORCIM 
+                                                                              E                    o  m E 
+                                                                                                   f 
+                                                                                                        S 
+                                                                              R                    s d L 
+                                                                                                   n  e F 
+                                                                                                     r   
+                                                                                 VCRTNIL 
+                                                                              A                    o i , 
+                                                                                                   i  u T 
+                                                                              S                    s 
+                                                   F                                               n  q X 
+                                                   I                          O                    e  e E 
+                                                             P       k  s 1                        t  r  P 
+                                                                              R                    x l E 
+                                                                      r                              l 
+                                                                                 VCRTNAC 
+                                                   T        S          e  y                        e   a E 
+                                                   S         I        o  c  r C                           
+                                                                       i  a                        e  s  s 
+                                                   O         D        w  v  r I                    l  e  e 
+                                       R                             t  r                          b 
+                                                                      e  b    M                    a d d 
+                                       U           M                   e i                         l 
+                                                                                                   i  u  u 
+                                                                                                     l l 
+                                                                                  TXEVRD 
+                                                                     N S L                         a 
+                                                                                 3 
+                                       D                                                             c  c 
+                                                TSOM RASORCIM 
+                                       P                                                           v  n  n 
+                                               1 
+                                                                                                   A I I 
+                                                                                                         
+                                                                                                   1 2 3 
+
+                                                            2 
+                                                                                 VRDGDW 
+                                                 P 
+                                                 C    D     E     M     F 
+                                                 X    A     S     S     I 
+                                                 H    O     A     H     H 
+                                                            B     T     T 
+                                                                                 VRDIPS 
+                                                 T    S     P     E     E 
+                                                 E          I 
+                                                      PI RASORCIM 
+                                                                                                          4 
+                                       M 
+                                                                                 TSTMAR 
+                                                                                                          R 
+                                 M     N                                                                  S 
+                                 O                        1                                          s    A 
+                                                                                                             
+                                                                                 VRDMWP 
+                                 C              P         P                                          e    r 
+       4                                        C    P    T    M   M    F                            c    o 
+                                 R              X    T    O    N   S    I                            i    f 
+                                 A              R    R    S    R   R    R                             v      
+       R                         S              F    F    I    F   F    F        VRDTROP              r   y 
+                                 O                        R                                          e    l 
+       A                         R                        F                                          S    s 
+                                                      RF RASORCIM 
+                                                                                                          u 
+                                 C                                                                    y   o 
+                                                                                 VRD TSOM 
+       S                   E     I                                                            r      t    i    . 
+                                                                                 1 
+                                       M                                                              r   r    r 
+                           T     M                                                            e                o 
+                    n                  U                                                     l       a    e    t 
+       O                                                                                                       c 
+                    o      R           D                                                     l       P    s    e 
+                                       P                                                                       V 
+                                                                                 VRDUCM 
+       R           i                   I         P       M      M      F                      o           d    y  
+                   t       R                     T       N      S      I                      r      d    e    b  
+       C                                         N       N      N      N                      t       r   i    l 
+                    a      A                     I       I      I      I                      n      3    f    a 
+       I                                         L                     L                                  i    v 
+                                                                                 VRDNIL 
+                                                         L      L 
+                    c      S                                                                  o           d    o 
+                   i                                                                                           r 
+                   l                                                                          c           o    p 
+                                                     NIL RASORCIM 
+       M                   O                                                                                   p 
+                                                                                                               a 
+                    p                                                                         o           M      
+                                                                                  VRDCII 
+                           R                                                                  r                n 
+                    p                                                         L                                e 
+       d                                                                                      c                t 
+                           C                                                                                   t 
+                                                                              A               i                i 
+                   A       I                    P    P                        C                           s    r 
+       n                                                                                                       w 
+                                       M        T         P    M    M   F                                        
+                                                                                 VRDUCI 
+                           M                         C    T             I                     M           e    r 
+       a                               O        9              N   S          R                           l    o 
+                                                     X                  N                                      i 
+                                       C        3    N    N    N    N         A                           u    r 
+                                                9    A    A    A    A   A     S                      s    d    p  
+                                                1         C             C                                      o 
+                                                                                                               t 
+                                                                                 VRDTPG 
+       3                                        J    C         C   C          O                      e    o      
+                                                                                                     c         t 
+                                                                              R                      i         c 
+                                                     NAC RASORCIM 
+                                                                                                          m    e 
+                                                                              C                       v        j 
+       R                                                                      I                       r        b 
+                                                                                                          4    u 
+ n  A                                                                         M   VRDRF              e    R    s  
+                                                                                                     s         s 
+                                                                                                               i 
+                                                                                                          S    g  
+ o  S                                           F                                                    d         n 
+                                                I                                                         A    i 
+i                                    M                     A         E           TSTHSALF            n         y 
+       O                             V          M                    E                               a    t    p 
+t                                               E          E         F                                    n    o 
+                                     N                                                                         c  
+       R                                        M                                                    t    a    r 
+                                                                                                               o 
+                                                                                 VRDSLF 
+ u                                                                                                   c    v      
+l                                                                                                    e         n 
+                                              MEM RASORCIM 
+       C                                                                                             j    e    o 
+                                                                                                          l    i 
+       I                                                                                             o         t 
+ o                                                                                                    r   e    u 
+                                                                                                               b 
+                                                                                 VRDHTE 
+                                                                                                          r    i 
+                                                                                                     P         r 
+       M                                                                                                       t 
+                                                                                                               s 
+S                                                                                                         w    i 
+                                                                                                               d 
+                                                                                                          e    y  
+                                                                                 VRDPEE 
+       n                           M      M     M        T       G                                        N    n 
+                                   C      E     I        L       B       P                                     A 
+                                                                                                                 
+R      e                           D      D     F        D       D       C                                     d. 
+                                                                         X                                     e 
+                                                                                 VRDOID 
+       e                                                                                                       v 
+A                                                                                                        d     r 
+                                  GAID RASORCIM      DMA RASORCIM 
+                                                                                                               e 
+                                                                                                          e    s 
+       w                                                                                                       e 
+S                                                                                                         z    r  
+       t                                                                                             e   i     s 
+                                                                                                         l 
+                                                                                 TSTEROC              r        t 
+       e                                                                                             a    a    h 
+                                                                                                               g 
+O                                                                                                         e    i 
+                                                                        F                                      r 
+       b                    M           M          M    M    M     M    I                             w   r    l  
+                                   M         T                                                       t         l 
+                                                                                 VRDNAC 
+T                           H      S    B    E     M    U    W     G    G                            f    y    A.  
+       s                    C      C    T    D     O    C    S     D    D                            o   d     H 
+U                           S           S          C    E    B     W    W                            S    a    b 
+       e           n                                                                                           m 
+                                                                                 VRDCDA 
+                   o                                                                                 d    e    G 
+                                              SYS RASORCIM 
+                                                                                                          r      
+A      c           i                                                                                  r  l     k 
+                   t  r                                                                                        i 
+                   c  e                                                                              a    a    t 
+       n           e  p                                                                              d         a 
+ r                 t  p                                                                                  0     m 
+       e           o                                                                                 n     .   r 
+                   r  a                                                                                        o 
+       r             r                                                                               a   4     f 
+ o                 P                                        S                                        t         n 
+                                                                                                               I 
+t      e           E W                                      O                                        S   R     r  
+                                                                                                               o 
+       f           2                                                                                           t 
+                   E                                                                                     S     c 
+ c  f                                                                                                          e 
+                                                      SO RASORCIM 
+       i                                                                                                 A     V 
+                                                                                                              .   9 
+ e                                                                                                             2  1 
+       D                                                                                                       1  :  
+V                                                                                                              0  e 
+                                                                                                               2  d 
+                                                                             L                                    i 
+                            E                       C                                                             l 
+                            2                       R                        A                                 ©  S 
+                            E                       C                        C 
+                                             SBIL RASORCIM 
+
+----------------------- Page 20-----------------------
+
+Vector AUTOSAR Solution 
+
+    Multicore Solution 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  20 
+
+----------------------- Page 21-----------------------
+
+Vector AUTOSAR Solution 
+
+   Flash Boot Loader 
+
+ Vector is authorized FBL supplier for all OEMs using AUTOSAR 
+
+ Extended Features  
+
+     Multi processor, multiple memory devices 
+
+     Pipelined Programming 
+
+     Security 
+
+     Gateway 
+
+     Compression 
+
+     … 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  21 
+
+----------------------- Page 22-----------------------
+
+Agenda 
+
+     General Information 
+
+     Why AUTOSAR 
+
+     Introduction to AUTOSAR 
+
+     Vector AUTOSAR Solution 
+
+  > OEM Solutions 
+
+     Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  22 
+
+----------------------- Page 23-----------------------
+
+OEM Solutions 
+
+   Current Status 
+
+ SOP of a complete AUTOSAR solution (BSW + RTE) 
+
+                         2010    2011    2012    2013    2014    2015    2016       … 
+
+       AUTOSAR 3.x 
+
+       AUTOSAR 4.x 
+
+  AUTOSAR 3.x is used in serial production projects by: 
+      Audi & Volkswagen 
+      BMW 
+      Daimler 
+      Fiat / Chrysler  
+      Volvo Trucks… 
+
+  AUTOSAR 4.x is used in serial production projects by: 
+      BMW 
+      Volvo Car 
+
+  Use of AUTOSAR 4.x is announced by 
+      Ford 
+      GM 
+      PSA 
+      Toyota 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  23 
+
+----------------------- Page 24-----------------------
+
+OEM Solutions 
+
+    Daimler SLP10 Overview 
+
+                                                                       Application                                  DEMSC              ROELITE 
+
+                                                                     MICROSAR RTE 
+
+                                                                                        MICROSAR COM 
+                             COMM 
+                                       G    DCM 
+                                       A                   NVM 
+                                       I 
+                              CRC      D                                 COM          IPDUM           NM           PDUR 
+                                       R 
+  Flash                                A     DEM 
+                                       S 
+                        S     DET      O              M                       1                                                O 
+   Boot                 Y              R              E   MEMIF       J1939TP                               1              1   I 
+                        S              C              M                                               FRXCP         ETHXCP        
+ Loader                 R              I              R                                 LINTP2                                 R    B 
+                        A              M     FIM      A                                                         1              A    A 
+            S           S    ECUM                     S                        1   N              R              P             S    W 
+            O           O                                               CANXCP     I              F    FRTP      I   SOAD      O    H 
+                        R                             O              N             L                                           R    O 
+            R           C                             R              A             R              R              R             C    I     Complex 
+            A           I                             C     EA       C   CANTP     A              A              A             I 
+            S    OS     M    SCHM                     I                            S    LINSM     S    FRNM      S  IPBASE     M           Drivers 
+            O                                         M              R             O              O              O 
+            R                          1                             A   CANNM     R              R              R 
+            C                          P                             S             C              C              C 
+            I                WDGM      C     XCP                     O             I              I    FRSM      I  ETHSM 
+            M                          X                             R   CANSM     M              M              M 
+                                                                     C 
+                                                            FEE      I                  LINIF 
+                                                                     M 
+                             WDGIF                                                                      FRIF         ETHIF 
+                                                                         CANIF 
+
+                                                        MICROSAR CAL3                                            MICROSAR EXT3 
+  Flash 
+                                                                                                                                    1 
+                          V    V     V    V     V    V    V          1     V    V     V    V    V     V      3     V     V     V    V 
+   Boot                   R    R     R    R     R    R    R     V    V     R    R     R    R    R     R      T     C     C     C    C 
+                          D    D     D               D          R    R                D    D    D     D      X     R     R     R    R 
+                               G          D     D         D     D    D     D    D                     T      E     T     T          T 
+ Loader                   T          U    S     P    N    N     R    H     I    U     M    C    O     R      V     N     N     T 
+                          P    D     C    L     E    A    I     F    T     P    C     W    D    I     O      R     A     I     R    H 
+                          G    W     M    F     E    C    L          E     S    I     P    A    D     P      D     C     L     F    T 
+                                                                                                                                    E 
+
+                                                                Microcontroller 
+
+                                                                                                             1Available extensions for AUTOSAR 3.x 
+      Daimler SLP                      Vector MICROSAR product                  Not used for OEM 
+                                                                                                             2Option included in LINIF 
+
+                                                                                                             3 Hardware dependent 
+
+     Daimler HLP                       Service by Vector 
+     available for preferred platforms 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  24 
+
+----------------------- Page 25-----------------------
+
+OEM Solutions 
+
+    BMW BAC4.0 Overview 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  25 
+
+----------------------- Page 26-----------------------
+
+     OEM Solutions 
+
+        VW MQB Overview 
+
+                      E2E Protection                                 Application 
+                         Wrapper 
+
+                                                                   MICROSAR RTE 
+
+                          Crypto                                                          MICROSAR COM 
+                            Lib        Wrapper                                                                                                        KS 
+
+                          E2E Lib        UDS           NVM 
+                                                                       COM             IPDUM              NM              PDUR 
+                                    G 
+                          COMM      A    SDS 
+                                    I                                                                                                                 BAP 
+                                    D 
+                      S                           M 
+                      Y    CRC      R             E                        1                          1                  1             O 
+                                    A                 MEMIF                                                              T             I 
+                      S             S  Wrapper    M                CANXCP          LINTP2        FRXCP        ETHXCP     S             R    B 
+ Flash                R    DET      O             R                                                                      O  MOST IF    A    A 
+                      A             R    DEH      A             N              N                          1              M             S    W 
+ Boot     S           S             C             S             A   CANTP      I             R    FRTP     P   SOAD      R             O    H      Complex 
+          O           O   ECUM      I             O             C              L             F             I             A             R    O 
+          R           R             M             R             R              R             R             R             S             C    I       Drivers 
+Loader                C                           C     EA                                   A             A             O             I 
+          A           I   BSWM                    I             A              A             S             S                           M 
+          S    OS     M                   FIM     M             S   CANNM      S   LINSM     O   FRNM      O   IPBASE    R    DISP  
+          O                                                     O              O                                         C 
+          R               SCHM                                  R              R             R             R             I 
+          C                                                     C              C             C             C             M 
+          I                                                     I   CANSM      I             I   FRSM      I   ETHSM 
+          M               WDGM      1                           M              M             M             M 
+                                    P    XCP            FEE                        LINIF                                    SMSC 
+                                    C 
+                          WDGIF     X                                CANIF                        FRIF         ETHIF      Net Services 
+
+                                                              MICROSAR CAL                                                   MICROSAR EXT 
+                              V                                         1     1                                    V      1    V    1        1 
+                        V           V     V     V     V     V           V      V     V     V     V     V     V     R      T    C    V    V    V 
+                        R     R     R     R     R     R     R     V     R      R     R     R     R     R     R            X    R    C    C    C 
+                        D     D     D     D     D     D     D     R     D      D     D     D     D     D     D     D      E    T    R    R    R 
+                        T     G     U     S     P     N     N     D            T     I     U     M     C     O     T      V    N    T    T    T 
+                        P     D     C     L     E     A     I     R     H      S     P     C           D     I     R      R    A    N    R    H 
+                        G           M     F     E     C     L     F     T      O     S     I     W     A     D     O      D         I    F    T 
+                              W                                         E      M                 P                 P           C    L         E 
+
+                                                                    Microcontroller 
+
+    Vector Product                                  3rd  Party                                                          1 Available extensions for AUTOSAR 3.1 
+                                                                                                                        2 Option included in LINIF 
+                                                    3rd  Party distributed by VW 
+
+    © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+    Slide:  26 
+
+----------------------- Page 27-----------------------
+
+     OEM Solutions 
+
+        Audi MLBevo Overview 
+
+                        E2E Protection                                Application 
+                          Wrapper 
+
+                                                                    MICROSAR RTE 
+
+                          Crypto                                                            MICROSAR COM 
+                            Lib         Wrapper                                                                                                         KS 
+
+                                                        NVM 
+                          E2E Lib         UDS 
+                                                                        COM             IPDUM              NM               PDUR 
+                                     G 
+                          COMM       A 
+                                     I    SDS                                                                                                           BAP 
+                                     D 
+                      S                            M 
+                      Y    CRC       R             E                                                                      1              O 
+                                     A                 MEMIF                1                           1                  T             I 
+                      S              S  Wrapper    M                CANXCP          LINTP3        FRXCP         ETHXCP     S             R    B 
+ Flash                R     DET      O             R                                                                       O  MOST IF    A    A 
+                      A              R    DEH      A             N              N                           1              M             S    W 
+ Boot      S          S              C             S             A   CANTP      I             R    FRTP     P    SOAD      R             O    H      Complex 
+           O          O    ECUM      I             O             C              L             F             I              A             R    O 
+           R          R              M             R             R              R             R             R              S             C    I       Drivers 
+Loader                C                            C     EA                                   A             A              O             I 
+           A          I   BSWM                     I             A              A             S    FRNM     S                            M 
+           S   OS     M                   FIM      M             S   CANNM      S   LINSM     O             O   IPBASE     R   DISP  
+           O                                                     O              O                                          C 
+           R               SCHM                                  R              R             R             R              I 
+           C                                                     C              C             C             C              M 
+           I                                                     I   CANSM      I             I    FRSM     I   ETHSM 
+           M              WDGM      1                            M              M             M             M 
+                                     P    XCP           FEE                         LINIF                                     SMSC 
+                                     C 
+                          WDGIF      X                                CANIF                        FRIF          ETHIF      Net Services 
+
+                                                               MICROSAR CAL                                                    MICROSAR EXT 
+                              V                                          1     1                                     V      1    V    1        1 
+                        V           V      V     V     V     V            V     V     V     V     V     V      V     R      T    C    V    V    V 
+                        R     R     R      R     R     R     R     V      R     R     R     R     R     R      R            X    R    C    C    C 
+                        D     D     D      D     D     D     D     R      D     D     D     D     D     D      D     D      E    T    R    R    R 
+                        T     G     U      S     P     N     N     D            T     I     U     M     C      O     T      V    N    T    T    T 
+                        P     D     C      L     E     A     I     R      H     S     P     C           D      I     R      R    A    N    R    H 
+                        G           M      F     E     C     L     F      T     O     S     I     W     A      D     O      D         I    F    T 
+                              W                                           E     M                 P                  P           C    L         E 
+
+                                                                     Microcontroller 
+
+                                                                                                                        1 Available extensions for AUTOSAR 3.x 
+                                                      rd 
+    AUTOSAR Stack MLBevo                             3   Party                              Not used for OEM            2 BAM and CMDT Option available 
+                                                                                                                        3 Option included in LINIF  
+    AUTOSAR Modules Vector                           3rd  Party distributed by Audi 
+
+     © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+    Slide:  27 
+
+----------------------- Page 28-----------------------
+
+     OEM Solutions 
+
+         FIAT FGA Overview 
+
+                                                                            Application 
+
+                                                                         MICROSAR RTE 
+
+                                                                                            MICROSAR COM 
+                           COMM 
+                                     G    DCM 
+                                     A                   NVM 
+                                     I 
+                            DET      D                                  COM              IPDUM              NM              PDUR                       FGACDD 
+                                        
+                                     R 
+                                     A    DEM 
+                                     S 
+                       S   ECUM      O             M 
+                       Y             R             E                       1,2                           1                  1             O 
+                                                        MEMIF      J1939TP                         FRXCP                    T             I 
+                       S             C             M                                                             ETHXCP     S                 
+                       R   BSWM      I                                              LINTP3                                  O  MOST IF    R    B 
+ Flash                               M     FIM     R                                                                                      A    A 
+                       A                           A                        1   N                   FRTP     1              M             S    W 
+ Boot      S           S                           S                 CANXCP     I              R             P    SOAD      R             O    H 
+           O          O    SCHM                    O              N             L              F             I              A             R    O      Complex 
+Loader     R           R                           R              A   CANTP     R              R  FRISOTP1   R              S             C    I 
+           A          C                            C     EA       C                            A             A              O             I            Drivers 
+           S           I                           I                            A              S             S   IPBASE5    R             M 
+           O   OS      M    CRC                    M              R   CANNM     S   LINSM      O             O              C   DISP  
+           R                                                      A             O              R   FRNM      R              I 
+           C                         1                            S             R              C             C              M 
+           I                         P                            O  ClassB NM  C              I             I 
+           M              WDGM       C    XCP                     R             I              M             M   ETHSM 
+                                     X                            C             M                  FRSM 
+                                                         FEE      I   CANSM          LINIF                                    Network 
+                                                                  M                                                           Services 
+                          WDGIF                                       CANIF                         FRIF          ETHIF        Library 
+
+                                                                MICROSAR CAL                                                    MICROSAR EXT 
+                               V                                          1     1                                     V      1    V    1        1 
+                        V            V     V     V     V      V           V     V     V      V     V     V     V      R      T    C    V    V    V 
+                        R      R     R     R     R     R      R     V     R     R     R      R     R     R     R             X    R    C    C    C 
+                        D      D     D     D     D     D      D     R     D     D     D      D     D     D     D      D      E    T    R    R    R 
+                        T      G     U     S     P     N      N     D           T     I      U     M     C     O      T      V    N    T    T    T 
+                        P      D     C     L     E     A      I     R     H     S     P      C           D     I      R      R    A    N    R    H 
+                        G            M     F     E     C      L     F     T     O     S      I     W     A     D      O      D         I    F    T 
+                               W                                          E     M                  P                  P           C    L         E 
+
+                                                                     Microcontroller 
+
+                                                                                                          1 Available extensions for AUTOSAR 3.x 
+
+    FGA AUTOSAR Stack                        FGA module                     Not used by FGA               2 BAM and CMDT Option available 
+
+                                                                                                          3 Option included in LINIF  
+
+    Vector MICROSAR product                  Service by Vector                                            4  Includes CAL, CPL and CRC 
+
+                                                                                                          5  Includes Socket, DHCP (Client), UDP, TCP, ICMP, ARP and IPV4 
+
+     © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+     Slide:  28 
+
+----------------------- Page 29-----------------------
+
+OEM Solutions 
+
+    Volvo Car AUTOSAR 4.x 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  29 
+
+----------------------- Page 30-----------------------
+
+Agenda 
+
+     General Information 
+
+     Why AUTOSAR 
+
+     Introduction to AUTOSAR 
+
+     Vector AUTOSAR Solution 
+
+     OEM Solutions 
+
+  > Characteristics of MICROSAR 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  30 
+
+----------------------- Page 31-----------------------
+
+      Characteristics of MICROSAR 
+
+         MICROSAR Basic Software – SLP + HLP + SIP 
+
+        HW independent modules                               HW dependent modules 
+
+                                  SLP                               HLP                      xLP – Right of use 
+
+                                             Configuration 
+(OEM) Specification                            Integration                          µC Derivative 
+
+                                                    Test 
+             Use Case                                                              Compiler Version/Optionen 
+
+                                                                    SIP                      SIP – Delivery 
+
+                                                                                    SLP – Software License Package 
+                                                                                    HLP – Hardware License Package 
+                                                      µC                            SIP – Software Integration Package 
+
+      © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+      Slide:  31 
+
+----------------------- Page 32-----------------------
+
+      Characteristics of MICROSAR 
+
+         Why buying a SIP? 
+                                                                                  Ready-to-Use 
+
+                                                                   Assembly 
+                                                                    and test 
+
+                      Delivery of single components 
+
+                                                                                       SIP = Turn key delivery 
+                                                                                      (faster and better tested) 
+
+                                                                                                                                         t 
+
+Order             Supposed  
+                  early delivery 
+
+                                                                  Assembly by the customer 
+
+      © 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+      Slide:  32 
+
+----------------------- Page 33-----------------------
+
+Characteristics of MICROSAR 
+
+   SIP 
+
+Tier1s profit from a powerful set of building blocks and get additionally an 
+individually tailored  and tested product  SIP (Software Integration Package) 
+
+ Integration 
+     … of required modules properly configured 
+     … of 3rd  party modules (by OEM and semiconductor vendor) 
+
+ Test 
+     … of all modules in an integrated subsystem  
+     … on target hardware with target compiler 
+     … of our customer’s use case 
+
+ Release of delivery based on … 
+     … OEM specific communication description 
+     … additional customer specific formats (ODX, cdd,…) 
+     … additional OEM requirements (Pre-configuration as agreed  with OEM) 
+
+ Quick Startup 
+     Startup manual for each OEM 
+     Reduction of configuration space for Tier1 
+
+ Maintenance 
+     Individual SIP specific issue reporting 
+     Patch and update deliveries > 15 years 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  33 
+
+----------------------- Page 34-----------------------
+
+Characteristics of MICROSAR 
+
+   Savings                                                                          Tier1 savings: 
+
+        High end configuration tool                                                 3 weeks/project/year 
+
+        Sophisticated memory solution („AUTOSAR++“) 
+
+        Warranty/liability related to single deliveries                             1 week/project/year 
+
+        Delivery related issue reporting                                            1 week/project/year 
+
+        Delivery & test optimized for HW and use case                               2 weeks/project/year 
+
+        Three MICROSAR releases per year 
+
+        OEM specifics „ahead and beyond AUTOSAR“                                    2 weeks/project/year 
+
+        Support of OEM specific workflows                                           2 weeks/project/year 
+
+        TÜV certified functional safety acc. AUTOSAR 
+                                                                                      total:   
+        Solution provided by the world market leader                                 11 weeks/project/year 
+        Solution for all OEMs available 
+        SPICE-3 quality 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  34 
+
+----------------------- Page 35-----------------------
+
+Characteristics of MICROSAR 
+
+   Services 
+
+                                                                                                                   Complete  
+                                                                                                                ECU Software 
+                                                                                    System Functions 
+                                                                                      and Software  
+                                                                  Extended              Integration  
+                                                                Integration 
+      Training,                                                   Package  
+                                           Workshops, 
+     Installation,  
+                                            Concepts                                                                                     Extend  
+      Support,          Coaching                                                                                                       of service 
+       Reviews 
+
+     CANbedded,        CANbedded,         CANbedded,           CANbedded,           CANbedded,               CANbedded, 
+      MICROSAR          MICROSAR           MICROSAR            MICROSAR              MICROSAR                 MICROSAR 
+
+                                                                        Customer specific projects 
+
+                        Embedded Standard Software                                   Technical Consulting 
+
+                        Product Services                                             Engineering Services 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  35 
+
+----------------------- Page 36-----------------------
+
+Characteristics of MICROSAR 
+
+   MICROSAR - Vector‘s AUTOSAR Embedded Software 
+
+                                            > 50 OEM solutions supported 
+   Vector provides standard  
+                                            > 100 μC / compiler pairs supported 
+      software since 1995 
+                                            > 1000 deliveries per year 
+
+         Vector supports                    contributing to specification 
+                                            1st delivery of AUTOSAR 3 BSW in Mar.2008 
+      AUTOSAR since 2004 
+                                            > 200 serial production projects 
+
+                                            > 800 person years of engineering invested 
+   Vector provides a mature                 1st SOP in 2010 
+        AUTOSAR solution                    most used solution in the world 
+
+  Vector provides BSW+RTE                   all OEMs choosing a BSW supplier decided for  
+                                               Vector (Volvo AB, Daimler, Audi, Asian OEMs) 
+        for all OEMs using  
+              AUTOSAR                       Vector is approved by  
+                                               BMW, Fiat, Volkswagen and Volvo Car 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  36 
+
+----------------------- Page 37-----------------------
+
+                                  Thank you for your attention.  
+
+                           For detailed information about Vector 
+                                  and our products please visit  
+
+                                             www.vector.com 
+
+                                                    Author: 
+
+                                              Christian Runge 
+
+                                      Vector Informatik GmbH 
+
+© 2012 . Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. 
+
+Slide:  37 
